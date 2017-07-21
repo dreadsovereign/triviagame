@@ -1,0 +1,68 @@
+body {
+  background-image: url("../images/navy_blue.png");
+  width: 100%;
+}
+
+h1 {
+  font-family: "Bungee", cursive;
+  color: crimson;
+  font-size: 60px;
+  text-shadow: -1px 1px 1px #fff;
+}
+
+h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+
+.trivia-box {
+  width: 960px;
+  height: 100%;
+  border: 1px darkgrey solid;
+  background-color: orange;
+  text-align: center;
+}
+
+.question {
+  display: flex;
+  justify-content: center;
+}
+
+.answer-box {
+  display: inline-flex;
+}
+
+.answer {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.time-remaining {
+  width: 200px;
+  height: 100px;
+  border: 1px solid darkgray;
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
+  margin-left: 20px;
+  background-color: orange;
+}
+
+img {
+  margin-right: 20px;
+}
