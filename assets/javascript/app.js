@@ -5,7 +5,8 @@ var unanswered = 0;
 function firstScreen() {
   $("#start").click(function() {
     $("h3, .answer-box").toggle().css("display", "flex");
-    $("#start").toggle().css("display", "none");
+    $(".start-button").toggle().css("display", "none");
+    $(".trivia-box").css("height", "100%");
     $("h2").toggle().css("display", "none");
     $("#time").toggle().css("display", "flex");
     $("#submit-button").toggle().css("display", "flex");
@@ -27,11 +28,13 @@ function firstScreen() {
         } else if (timer === 0) {
         answerClick();
         alert("You ran out of time!");
-        $(".score").toggle().css("display", "flex");
+        $(".score").toggle().css({"display": "flex", "margin-top": "550px"});
         $(".correct").html("Correct: " + correctAnswers);
         $(".incorrect").html("Incorrect: " + wrongAnswers);
+        $(".trivia-box").css("height", "500px");
         $("h3, .answer-box").toggle().css("display", "none");
         $("#submit-button").toggle().css("display", "none");
+        $("html, body").animate({ scrollTop: 0 }, "fast");
         clearInterval(intervalID);
     } console.log(timer);
   }, 1000);
@@ -64,9 +67,11 @@ function answerClick() {
     $("h3, .answer-box").toggle().css("display", "none");
     $("h2").toggle().css("display", "none");
     $("#submit-button").toggle().css("display", "none");
-    $(".score").toggle().css("display", "flex");
+    $(".score").toggle().css({"display": "flex", "margin-top": "550px"});
     $(".correct").html("Correct: " + correctAnswers);
     $(".incorrect").html("Incorrect: " + wrongAnswers);
+    $(".trivia-box").css("height", "500px");
+    $("html, body").animate({ scrollTop: 0 }, "fast");
     clearInterval(intervalID);
   })
 }
