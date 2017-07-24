@@ -25,21 +25,8 @@ function firstScreen() {
             timer = duration;
 
         } else if (timer === 0) {
-          function answerClick() {
-          for (var i = 1; i <= 14; i++) {
-           var radios = document.getElementsByName('group'+i);
-           for (var j = 0; j < radios.length; j++) {
-             var radio = radios[j];
-             if(radio.value == "correctAnswer" && radio.checked) {
-               correctAnswers++;
-            } else if(radio.value =="wrongAnswer" && radio.checked) {
-                wrongAnswers++;
-            } else {
-                unanswered++;
-            }
-          }
-        } 
-      }alert("You ran out of time!");
+        answerClick();
+        alert("You ran out of time!");
         $(".score").toggle().css("display", "flex");
         $(".correct").html("Correct: " + correctAnswers);
         $(".incorrect").html("Incorrect: " + wrongAnswers);
