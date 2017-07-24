@@ -1,6 +1,6 @@
 var correctAnswers = 0;
-var incorrectAnswers = 0;
-var unanswered= 0;
+var wrongAnswers = 0;
+var unanswered = 0;
 
 function firstScreen() {
   $("#start").click(function() {
@@ -24,15 +24,30 @@ function firstScreen() {
         if (--timer < 0) {
             timer = duration;
 
-        } else if (timer == 0) {
-          alert("You ran out of time!");
-          $(".score").toggle().css("display", "flex");
-          $("h3, .answer-box").toggle().css("display", "none");
-          $("#submit-button").toggle().css("display", "none");
-          clearInterval(intervalID);
-        }
-      console.log(timer);
-    }, 1000);
+        } else if (timer === 0) {
+          function answerClick() {
+          for (var i = 1; i <= 14; i++) {
+           var radios = document.getElementsByName('group'+i);
+           for (var j = 0; j < radios.length; j++) {
+             var radio = radios[j];
+             if(radio.value == "correctAnswer" && radio.checked) {
+               correctAnswers++;
+            } else if(radio.value =="wrongAnswer" && radio.checked) {
+                wrongAnswers++;
+            } else {
+                unanswered++;
+            }
+          }
+        } 
+      }alert("You ran out of time!");
+        $(".score").toggle().css("display", "flex");
+        $(".correct").html("Correct: " + correctAnswers);
+        $(".incorrect").html("Incorrect: " + wrongAnswers);
+        $("h3, .answer-box").toggle().css("display", "none");
+        $("#submit-button").toggle().css("display", "none");
+        clearInterval(intervalID);
+    } console.log(timer);
+  }, 1000);
 }
 
 jQuery(function ($) {
@@ -40,16 +55,40 @@ jQuery(function ($) {
         display = $('#time');
     startTimer(twoMinutes, display);
 });
-  
-  
+
 
 });
 
-
-
 };
 
+function answerClick() {
+  for (var i = 1; i <= 14; i++) {
+    var radios = document.getElementsByName('group'+i);
+    for (var j = 0; j < radios.length; j++) {
+      var radio = radios[j];
+      if(radio.value == "correctAnswer" && radio.checked) {
+        correctAnswers++;
+      } else if(radio.value =="wrongAnswer" && radio.checked) {
+        wrongAnswers++;
+      }
+    }
+  }
+  $("#submit-button").click(function() {
+    $("h3, .answer-box").toggle().css("display", "none");
+    $("h2").toggle().css("display", "none");
+    $("#submit-button").toggle().css("display", "none");
+    $(".score").toggle().css("display", "flex");
+    $(".correct").html("Correct: " + correctAnswers);
+    $(".incorrect").html("Incorrect: " + wrongAnswers);
+    clearInterval(intervalID);
+  })
+}
+answerClick();
+
 firstScreen();
+
+
+
 
 
 
