@@ -31,6 +31,7 @@ function firstScreen() {
         $(".score").toggle().css({"display": "flex", "margin-top": "550px"});
         $(".correct").html("Correct: " + correctAnswers);
         $(".incorrect").html("Incorrect: " + wrongAnswers);
+        $(".no-answer").html("Unanswered: " + unanswered);
         $(".trivia-box").css("height", "500px");
         $("h3, .answer-box").toggle().css("display", "none");
         $("#submit-button").toggle().css("display", "none");
@@ -62,7 +63,7 @@ function answerClick() {
         wrongAnswers++;
       }
     }
-  }
+  } unanswered = 14 - (correctAnswers + wrongAnswers);
   $("#submit-button").click(function() {
     $("h3, .answer-box").toggle().css("display", "none");
     $("h2").toggle().css("display", "none");
@@ -70,6 +71,7 @@ function answerClick() {
     $(".score").toggle().css({"display": "flex", "margin-top": "550px"});
     $(".correct").html("Correct: " + correctAnswers);
     $(".incorrect").html("Incorrect: " + wrongAnswers);
+    $(".no-answer").html("Unanswered: " + unanswered);
     $(".trivia-box").css("height", "500px");
     $("html, body").animate({ scrollTop: 0 }, "fast");
     clearInterval(intervalID);
