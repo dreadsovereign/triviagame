@@ -49,7 +49,7 @@ header {
 
 .trivia-box {
   width: 960px;
-  height: 500px;
+  height: 610px;
   border: 1px darkgrey solid;
   background-color: orange;
   text-align: center;
@@ -89,16 +89,82 @@ header {
   align-self: flex-start;
   position: sticky;
   top: 0;
-  margin-left: 20px;
   background-color: orange;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 
-img {
-  margin-right: 20px;
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  position: sticky;
+  top: 0;
+  margin-left: 20px;
+}
+
+.mario-luigi {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 230px;
+  height: 610px;
+  position: sticky;
+  top: 0;
+}
+
+img#mario {
+  height: 122px;
+  width: 100px;
+}
+
+img#luigi {
+  height: 122px;
+  width: 100px;
+}
+
+img#peach {
+  height: 122px;
+  width: 100px;
+}
+
+img#yoshi {
+  height: 122px;
+  width: 100px;
+}
+
+img#toad {
+  height: 122px;
+  width: 100px;
+}
+
+img#bowser {
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+img#goomba {
+  height: 122px;
+  width: 100px;
+}
+
+img#boo {
+  height: 122px;
+  width: 100px;
+}
+
+img#koopa {
+  height: 122px;
+  width: 100px;
+}
+
+img#bulletbill {
+  height: 122px;
+  width: 100px;
 }
 
 input[type=radio] {

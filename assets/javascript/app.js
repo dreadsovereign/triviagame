@@ -32,7 +32,7 @@ function firstScreen() {
         $(".correct").html("Correct: " + correctAnswers);
         $(".incorrect").html("Incorrect: " + wrongAnswers);
         $(".no-answer").html("Unanswered: " + unanswered);
-        $(".trivia-box").css("height", "500px");
+        $(".trivia-box").css("height", "610px");
         $("h3, .answer-box").toggle().css("display", "none");
         $("#submit-button").toggle().css("display", "none");
         $("html, body").animate({ scrollTop: 0 }, "fast");
@@ -72,7 +72,7 @@ function answerClick() {
     $(".correct").html("Correct: " + correctAnswers);
     $(".incorrect").html("Incorrect: " + wrongAnswers);
     $(".no-answer").html("Unanswered: " + unanswered);
-    $(".trivia-box").css("height", "500px");
+    $(".trivia-box").css("height", "610px");
     $("html, body").animate({ scrollTop: 0 }, "fast");
     clearInterval(intervalID);
   })
