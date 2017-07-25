@@ -22,9 +22,10 @@ function firstScreen() {
 
         display.text(minutes + ":" + seconds);
 
-        if (--timer < 0) {
+        if (timer < 0) {
+            
             timer = duration;
-
+        
         } else if (timer === 0) {
         answerClick();
         alert("You ran out of time!");
@@ -37,7 +38,9 @@ function firstScreen() {
         $("#submit-button").toggle().css("display", "none");
         $("html, body").animate({ scrollTop: 0 }, "fast");
         clearInterval(intervalID);
-    } console.log(timer);
+      } else {
+        timer--;
+      } console.log(timer);
   }, 1000);
 }
 
